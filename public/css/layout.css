@@ -1,0 +1,56 @@
+h2 {
+    font-family: 'Playfair Display SC', serif;
+    font-size: 25pt;
+    color: black;
+}
+h3 {
+    font-family: 'Playfair Display SC', serif;
+    font-size: 18pt;
+    color: black;
+    text-align: match-parent;
+}
+
+section {
+    height: calc(100% - 75px);
+    color: #fff;
+    font-family: 'Rubik', serif;
+    font-size: 1.25rem;
+    line-height: 150%;
+    text-align: center;
+}
+
+/*div {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    justify-content: center;*/
+/*}*/
+
+h1 {
+    font-family: 'Caveat', cursive;
+    font-size: 25px;
+}
+
+/* Pattern styles */
+.myCont {
+    display: flex;
+}
+
+.left-half {
+    flex: 1;
+    background-color: floralwhite;
+}
+
+.right-half {
+    flex: 1;
+    background: #ffffff url('/images/notebook.png');
+    background-size: cover;
+}
+
+.note-background {
+    height: 100%;
+    background-size: cover;
+    background: #ffffff url('/images/list_background.png') no-repeat center;
+}
+body, html{
+    height: 100%
+}

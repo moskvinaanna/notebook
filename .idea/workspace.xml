@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="40bd97d0-7f7f-48a8-9a90-179f3dea67f6" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Erb File" />
+        <option value="Ruby File" />
+        <option value="Ruby Module" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1Untb9WXSFRAUntWqtq6G3lrW7F" />
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Telecommunication" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Anna\RubymineProjects\Notebook\views\notes" />
+      <recent name="C:\Users\Anna\RubymineProjects\Notebook\public" />
+      <recent name="C:\Users\Anna\RubymineProjects\Notebook\public\images" />
+      <recent name="C:\Users\Anna\RubymineProjects\Notebook\assets\css" />
+      <recent name="C:\Users\Anna\RubymineProjects\Notebook\lib" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="true" RAKE_SPRING_PRE_LOADER_OPTION="true" RAILS_SPRING_PRE_LOADER_OPTION="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="40bd97d0-7f7f-48a8-9a90-179f3dea67f6" name="Default Changelist" comment="" />
+      <created>1576004255583</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1576004255583</updated>
+      <workItem from="1576004256774" duration="1942000" />
+      <workItem from="1576007094033" duration="249000" />
+      <workItem from="1576007820418" duration="2583000" />
+      <workItem from="1576081040803" duration="8516000" />
+      <workItem from="1576138492592" duration="3350000" />
+      <workItem from="1576320535752" duration="2594000" />
+      <workItem from="1576418354975" duration="9571000" />
+      <workItem from="1576438220624" duration="1576000" />
+      <workItem from="1576524296319" duration="8201000" />
+      <workItem from="1576570343585" duration="15493000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.rb" />
+  </component>
+</project>

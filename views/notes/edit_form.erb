@@ -1,0 +1,17 @@
+<form method="post">  
+  <p>
+    <label>Номер мобильного телефона:</label>
+    <input name="cell_phone_num" placeholder="Введите номер телефона" value=<%=@note[:cell_phone_num]%>>
+  </p>
+   <p>
+    <label>Номер домашнего телефона:</label>
+    <input name="home_phone_num" placeholder="Введите номер телефона" value=<%=@note[:home_phone_num]%>>
+  </p>
+   <p>
+    <label>Адрес:</label>
+    <input name="address" placeholder="Введите адрес" value=<%=@note[:address]%>>
+  </p>
+  <p>
+    <input type="submit" value="Изменить">
+  </p>
+</form>
