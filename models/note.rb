@@ -1,11 +1,22 @@
 require 'sequel'
 require_relative 'note'
+require 'date'
 
 class Note < Sequel::Model(:notes)
     many_to_one :status
 
   def self.closest_dates(sel_date)
-    where{birthday_date < sel_date}.limit(10).all
+    date = sel_date.yday
+    db["SELECT *, 
+      case when (strftime('%j', birthday_date) - #{date} > 0)
+      THEN
+      strftime('%j',birthday_date) - #{date}
+      ELSE
+      strftime('%j',birthday_date) + 365 - #{date}
+      END
+      as datediff,  #{date} as date
+      FROM notes ORDER BY datediff"].all
+    
   end
 
   def self.search_by(search, selection)

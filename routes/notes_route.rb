@@ -11,7 +11,7 @@ class App
         notes = opts[:notes].search_by(@search, @selection) || opts[:notes]
         @count = notes.count
         @pages_count = (@count.to_f / 5).ceil - 1
-        @notes = notes.limit(7, @page_number * 5).all
+        @notes = notes.limit(5, @page_number * 5).all
         view :notes
       end
     end

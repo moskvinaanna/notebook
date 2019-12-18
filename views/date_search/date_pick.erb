@@ -5,4 +5,22 @@
   <p>
     <input type="submit" value="Найти">
   </p>
+  <table class="table table-hover">
+  <thead>
+  <tr>
+    <th scope="col">Имя</th>
+    <th scope="col">Фамилия</th>
+    <th scope="col">Статус</th>
+    <th scope="col">Дата рождения</th>
+    <th scope="col">Подробнее</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @notes.each do |note| %>
+    <% @note = note %>
+    <% @status = @statuses[note[:status_id]] %>
+    <%= render :note_date_partial %>
+  <% end  %>
+  </tbody>
+</table>
 </form>

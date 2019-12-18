@@ -5,8 +5,9 @@ class App
 
     r.is do
       r.get do
-        @date = r.params[:date]
-        @notes = opts[:notes].closest_dates(@date) if @date != nil
+        @date = r.params['date']
+        @notes = @date != nil ? opts[:notes].closest_dates(Date.parse @date) : []
+        @statuses = opts[:statuses]
         view :date_pick
       end
     end
