@@ -1,12 +1,29 @@
-<!--<div class="note-background"></div>-->
-<a href='/notes/new'>Добавить запись</a>
-<a href='/notes/delete'>Удалить запись</a>
+<form method="get">
+  <div class="note-background">
+    <p>
+  <a class="btn btn-outline-dark" href='/notes/new'>Добавить запись</a>
+    <a class="btn btn-outline-dark" href='/notes/delete'>Удалить запись</a>
+    </p>
+    <label>Поиск по:</label>
+    <select name="select" class="custom-select custom-select-sm" id="select" style="width:auto">
+      <option>Имени</option>
+      <option>Фамилии</option>
+      <option>Статусу</option>
+    </select>
+    <div class="input-group input-group-sm mb-3">
+      <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"  name="search" placeholder="Поиск" value=<%=@search %>>
+      <div class="input-group-append">
+      <input class="input-group-text" type="submit" value="Найти">
+      </div>
+    </div>
 <table class="table table-hover">
   <thead>
   <tr>
     <th scope="col">Имя</th>
     <th scope="col">Фамилия</th>
     <th scope="col">Статус</th>
+    <th scope="col">Подробнее</th>
+    <th scope="col">Изменить</th>
   </tr>
   </thead>
   <tbody>
@@ -14,8 +31,23 @@
     <% @note = note %>
     <% @status = note.status %>
     <%= render :note_partial %>
-    <a href="/notes/<%= note[:id] %>">Подробнее</a>
-    <a href="/notes/<%= note[:id] %>/edit">Изменить</a>
   <% end  %>
   </tbody>
 </table>
+    <p>
+      <% page_start = (@page_number - 2) > 0 ? @page_number - 2 : 0 %>
+      <% page_end = (@page_number + 2) < @pages_count ? @page_number + 2 : @pages_count %>
+
+      <% page_start.upto(page_end) do |page_num| %>
+        <% if page_num == @page_number %>
+          <%= page_num + 1 %>
+        <% else %>
+          <a href="/notes?page_number=<%= page_num %>&search=<%=@search %>">
+            <%= page_num + 1 %>
+          </a>
+        <% end %>
+      <% end %>
+    </p>
+  </div>
+
+</form>

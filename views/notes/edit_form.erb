@@ -1,4 +1,7 @@
-<form method="post">  
+<form method="post">
+  <div class="post-note-background">
+    <div class="center">
+      <h4>
   <p>
     <label>Номер мобильного телефона:</label>
     <input name="cell_phone_num" placeholder="Введите номер телефона" value=<%=@note[:cell_phone_num]%>>
@@ -12,6 +15,9 @@
     <input name="address" placeholder="Введите адрес" value=<%=@note[:address]%>>
   </p>
   <p>
-    <input type="submit" value="Изменить">
+    <input class="btn btn-light" type="submit" value="Изменить">
   </p>
+      </h4>
+    </div>
+  </div>
 </form>

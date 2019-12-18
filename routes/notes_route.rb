@@ -5,7 +5,13 @@ class App
 
     r.is do
       r.get do
-        @notes = opts[:notes].all
+        @search = r.params['search']
+        @selection = r.params['select']
+        @page_number = r.params['page_number']&.to_i || 0
+        notes = opts[:notes].search_by(@search, @selection) || opts[:notes]
+        @count = notes.count
+        @pages_count = (@count.to_f / 5).ceil - 1
+        @notes = notes.limit(7, @page_number * 5).all
         view :notes
       end
     end
@@ -63,6 +69,7 @@ class App
       r.post do
         @result = validate_contract(NotesContract, r.params)
         if @result.failure?
+          @statuses = opts[:statuses].all
           view :note_form
         else
           symboled_params = r.params.map { |key, value| [key.to_sym, value]}.to_h

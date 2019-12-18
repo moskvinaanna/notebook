@@ -1,24 +1,13 @@
 class App
   hash_branch('closest_dates') do |r|
     set_layout_options template: '../views/layout'
-    set_view_subdir 'notes'
+    set_view_subdir 'date_search'
 
     r.is do
       r.get do
+        @date = r.params[:date]
+        @notes = opts[:notes].closest_dates(@date) if @date != nil
         view :date_pick
-      end
-      r.post do
-        symboled_params = r.params.map { |key, value| [key.to_sym, value]}.to_h
-        @date = symboled_params[:date]
-        @notes = opts[:notes].closest_dates(@date)
-        view :notes
-      end
-
-      r.on 'results' do
-        r.get do
-          @notes = opts[:notes].closest_dates(@date)
-          view :notes
-        end
       end
     end
   end

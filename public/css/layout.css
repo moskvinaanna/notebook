@@ -29,6 +29,10 @@ h1 {
     font-family: 'Caveat', cursive;
     font-size: 25px;
 }
+h4 {
+    font-family: 'Caveat', cursive;
+    font-size: 18px;
+}
 
 /* Pattern styles */
 .myCont {
@@ -47,9 +51,24 @@ h1 {
 }
 
 .note-background {
-    height: 100%;
+    background-size: contain;
+    height: calc(100% - 75px);
+    background-color: floralwhite;
+}
+.post-note-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    resize: both;
+    overflow: auto;
     background-size: cover;
-    background: #ffffff url('/images/list_background.png') no-repeat center;
+    height: calc(100% - 75px);
+    background: floralwhite url('/images/note.png') no-repeat center;
+}
+
+.center {
+    resize: both;
+    overflow: auto;
 }
 body, html{
     height: 100%
