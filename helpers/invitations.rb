@@ -4,8 +4,8 @@ require 'date'
 # handles invitations
 module Invitations
   def self.get_text(event, date, place)
-    text = ["Приглашаем вас принять участие в праздновании #{event}, которое состоится #{date} в #{place}",
-            "Приглашаем вас посетить #{event} #{date} по адресу #{place}"]
+    text = ["Приглашаем Вас на #{event}, которое состоится #{date} по адресу #{place}",
+            "Приглашаем Вас посетить #{event} #{date} по адресу #{place}"]
     text[rand(text.size)]
   end
 

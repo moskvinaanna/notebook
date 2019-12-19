@@ -16,4 +16,8 @@ class Status < Sequel::Model(:statuses)
                 birthday_date: person[:birthday_date],
                 gender: person[:gender])
   end
+
+  def self.is_empty?(status_id)
+    self[status_id].notes.empty?
+  end
 end

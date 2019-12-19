@@ -58,4 +58,8 @@ class NotesContract < Dry::Validation::Contract
   rule(:status) do
     key.failure('Статус должен иметь длину не больше 100 символов') if value.length > 100
   end
+
+  rule(:gender) do
+    key.failure('Имя должно иметь длину не больше 255 символов') if value.length > 255
+  end
 end

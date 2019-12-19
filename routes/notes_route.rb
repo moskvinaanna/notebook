@@ -22,6 +22,7 @@ class App
     r.on Integer do |note_id|
       r.is do
         r.get do
+          r.redirect '/notes' if opts[:notes].find(id: note_id).nil?
           @note = opts[:notes][note_id]
           @status = @note.status
           view :note
@@ -30,6 +31,7 @@ class App
 
       r.on 'edit' do
         r.get do
+          r.redirect '/notes' if opts[:notes].find(id: note_id).nil?
           @note = opts[:notes][note_id]
           @statuses = opts[:statuses]
           @errors = {}
@@ -49,7 +51,7 @@ class App
             new_status_id = opts[:statuses]
                             .find_or_create(name: symboled_params[:status])[:id]
             opts[:notes].update_note(symboled_params, note_id, new_status_id)
-            opts[:statuses][status_id].destroy if opts[:statuses][status_id].notes.empty?
+            opts[:statuses][status_id].destroy if opts[:statuses].is_empty?(status_id)
             r.redirect '/notes'
           end
         end
@@ -67,10 +69,10 @@ class App
       r.post do
         symboled_params = r.params.map { |key, value| [key.to_sym, value] }.to_h
         symboled_params.keys.each do |key|
-          next if Note.find(id: key.to_s.to_i).nil?
+          next if opts[:notes].find(id: key.to_s.to_i).nil?
 
-          status_id = Note[key.to_s.to_i][:status_id]
-          Note[key.to_s.to_i].destroy
+          status_id = opts[:notes][key.to_s.to_i][:status_id]
+          opts[:notes][key.to_s.to_i].destroy
           opts[:statuses][status_id].destroy if opts[:statuses][status_id].notes.empty?
         end
         r.redirect '/notes'

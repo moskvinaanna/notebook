@@ -36,8 +36,8 @@ class Note < Sequel::Model(:notes)
 
   def self.update_note(person, note_id, new_status_id)
     self[note_id].update(cell_phone_num: person[:cell_phone_num],
-                     home_phone_num: person[:home_phone_num],
-                     address: person[:address],
-                     status_id: new_status_id)
+                         home_phone_num: person[:home_phone_num],
+                         address: person[:address],
+                         status_id: new_status_id)
   end
 end

@@ -87,7 +87,7 @@
             <option>мужской</option>
           </select>
           <%if  @errors.key?(:gender)%>
-            <span style="color: red" class="help-block">Поле должно быть заполнено</span>
+            <span style="color: red" class="help-block">Поле должно быть заполнено и иметь длину не больше 255</span>
           <%end %>
         </div>
         </p>

@@ -2,53 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40bd97d0-7f7f-48a8-9a90-179f3dea67f6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/date_contract.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/edit_contract.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/invitations_contract.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/files/18КашинаДень рождения.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/files/19ЧечулинаДень рождения.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/files/23КашинаДень рождения.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/files/друзья.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/jquery-3.4.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/popper.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.ru" beforeDir="false" afterPath="$PROJECT_DIR$/config.ru" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/notes.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/notes.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpers/contract_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/contract_helper.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpers/invitations.rb" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/invitations.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpers/successfull_result.rb" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/successfull_result.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/notes_contract.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/notes_contract.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/0001_create_table.rb" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/0001_create_table.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/0002_create_table.rb" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/0002_create_table.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/note.rb" beforeDir="false" afterPath="$PROJECT_DIR$/models/note.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/status.rb" beforeDir="false" afterPath="$PROJECT_DIR$/models/status.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/layout.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/layout.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/notebook.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/closest_dates_route.rb" beforeDir="false" afterPath="$PROJECT_DIR$/routes/closest_dates_route.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/home_page_route.rb" beforeDir="false" afterPath="$PROJECT_DIR$/routes/home_page_route.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/invites_route.rb" beforeDir="false" afterPath="$PROJECT_DIR$/routes/invites_route.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/notes_route.rb" beforeDir="false" afterPath="$PROJECT_DIR$/routes/notes_route.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/date_search/date_pick.erb" beforeDir="false" afterPath="$PROJECT_DIR$/views/date_search/date_pick.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/home_page.erb" beforeDir="false" afterPath="$PROJECT_DIR$/views/home_page/home_page.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/invitations/invites.erb" beforeDir="false" afterPath="$PROJECT_DIR$/views/invitations/invites.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/layout.erb" beforeDir="false" afterPath="$PROJECT_DIR$/views/layout.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/notes/delete_form.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/notes/edit_form.erb" beforeDir="false" afterPath="$PROJECT_DIR$/views/notes/edit_form.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/notes/note_delete.erb" beforeDir="false" afterPath="$PROJECT_DIR$/views/notes/note_delete.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/notes/note_form.erb" beforeDir="false" afterPath="$PROJECT_DIR$/views/notes/note_form.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/notes/note_full.erb" beforeDir="false" afterPath="$PROJECT_DIR$/views/notes/note_full.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/notes/note_partial_delete.erb" beforeDir="false" afterPath="$PROJECT_DIR$/views/notes/note_partial_delete.erb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -122,7 +82,8 @@
       <workItem from="1576438220624" duration="1576000" />
       <workItem from="1576524296319" duration="8201000" />
       <workItem from="1576570343585" duration="26728000" />
-      <workItem from="1576682300422" duration="27932000" />
+      <workItem from="1576682300422" duration="28475000" />
+      <workItem from="1576735087688" duration="828000" />
     </task>
     <servers />
   </component>
@@ -137,7 +98,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
