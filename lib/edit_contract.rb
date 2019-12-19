@@ -1,34 +1,13 @@
 # frozen_string_literal: true
 
 require 'dry-validation'
-# checks input of new data
-class NotesContract < Dry::Validation::Contract
+# checks input of edit data
+class EditContract < Dry::Validation::Contract
   params do
-    required(:name).filled(:string)
-    optional(:birthday_date).value(:date)
     required(:status).filled(:string)
-    required(:gender).filled(:string)
-    optional(:surname).value(:string)
     optional(:cell_phone_num).value(:string)
-    optional(:patronymic_name).value(:string)
     optional(:home_phone_num).value(:string)
     optional(:address).value(:string)
-  end
-
-  rule(:name) do
-    key.failure('Имя должно иметь длину не больше 100 символов') if value.length > 100
-  end
-
-  rule(:surname) do
-    key.failure('Фамилия должна иметь длину не больше 100 символов') if value.length > 100
-  end
-
-  rule(:surname) do
-    key.failure('Фамилия должна иметь длину не больше 100 символов') if value.length > 100
-  end
-
-  rule(:patronymic_name) do
-    key.failure('Отчество должно иметь длину не больше 100 символов') if value.length > 100
   end
 
   rule(:cell_phone_num) do

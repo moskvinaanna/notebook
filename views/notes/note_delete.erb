@@ -1,41 +1,57 @@
-<form method="post">  
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-  Удалить
-</button>
-<table class="table table-hover">
-  <thead>
-  <tr>
-    <th scope="col">Имя</th>
-    <th scope="col">Фамилия</th>
-    <th scope="col">Статус</th>
-    <th scope="col">Выбор</th>
-  </tr>
-  </thead>
-  <tbody>
-  <% @notes.each do |note| %>
-    <% @note = note %>
-    <%= render :note_partial_delete %>
-    <a href="/notes/<%= note[:id] %>">Подробнее</a>
-  <% end  %>
-  </tbody>
-</table>
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Удалить</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        Вы действительно хотите удалить выбранные записи?
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-        <button type="submit" class="btn btn-primary">Удалить</button>
-      </div>
+<div class="note-background">
+<form method="get">
+  <label>Поиск по:</label>
+  <select name="select" class="custom-select custom-select-sm" id="select" style="width:auto">
+    <option>Имени</option>
+    <option>Фамилии</option>
+    <option>Статусу</option>
+  </select>
+  <div class="input-group input-group-sm mb-3">
+    <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"  name="search" placeholder="Поиск" value=<%=@search %>>
+    <div class="input-group-append">
+      <input class="input-group-text" type="submit" value="Найти">
     </div>
   </div>
-</div>
 </form>
+  <form method="post">
+    <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#exampleModalLong">
+      Удалить
+    </button>
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th scope="col">Имя</th>
+        <th scope="col">Фамилия</th>
+        <th scope="col">Статус</th>
+        <th scope="col">Подробнее</th>
+        <th scope="col">Выбор</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @notes.each do |note| %>
+        <% @note = note %>
+        <%= render :note_partial_delete %>
+      <% end  %>
+      </tbody>
+    </table>
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Удалить</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true"></span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Вы действительно хотите удалить выбранные записи?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+            <button type="submit" class="btn btn-primary">Удалить</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

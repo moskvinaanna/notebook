@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# notes route
 class App
   hash_branch('notes') do |r|
     set_layout_options template: '../views/layout'
@@ -28,29 +31,44 @@ class App
       r.on 'edit' do
         r.get do
           @note = opts[:notes][note_id]
+          @statuses = opts[:statuses]
+          @errors = {}
           view :edit_form
-
         end
+
         r.post do
-          status_id = @note[:status_id]
-          symboled_params = r.params.map { |key, value| [key.to_sym, value]}.to_h
-          opts[:notes][note_id].update(cell_phone_num: symboled_params[:cell_phone_num], home_phone_num: symboled_params[:home_phone_num], address: symboled_params[:address])
-          opts[:statuses][status_id].destroy if opts[:statuses][status_id]
-          r.redirect '/notes'
+          @result = validate_contract(EditContract, r.params)
+          if @result.failure?
+            @note = opts[:notes][note_id]
+            @statuses = opts[:statuses]
+            @errors = @result.errors.to_h
+            view :edit_form
+          else
+            status_id = opts[:notes][note_id][:status_id]
+            symboled_params = r.params.map { |key, value| [key.to_sym, value] }.to_h
+            new_status_id = opts[:statuses]
+                            .find_or_create(name: symboled_params[:status])[:id]
+            opts[:notes].update_note(symboled_params, note_id, new_status_id)
+            opts[:statuses][status_id].destroy if opts[:statuses][status_id].notes.empty?
+            r.redirect '/notes'
+          end
         end
       end
     end
 
     r.on 'delete' do
       r.get do
-        @notes = opts[:notes].all
+        @search = r.params['search']
+        @selection = r.params['select']
+        @notes = opts[:notes].search_by(@search, @selection) || opts[:notes]
         view :note_delete
       end
 
       r.post do
-        symboled_params = r.params.map { |key, value| [key.to_sym, value]}.to_h
-
+        symboled_params = r.params.map { |key, value| [key.to_sym, value] }.to_h
         symboled_params.keys.each do |key|
+          next if Note.find(id: key.to_s.to_i).nil?
+
           status_id = Note[key.to_s.to_i][:status_id]
           Note[key.to_s.to_i].destroy
           opts[:statuses][status_id].destroy if opts[:statuses][status_id].notes.empty?
@@ -63,6 +81,7 @@ class App
       r.get do
         @result = SuccessfullResult.new
         @statuses = opts[:statuses].all
+        @errors = {}
         view :note_form
       end
 
@@ -70,16 +89,11 @@ class App
         @result = validate_contract(NotesContract, r.params)
         if @result.failure?
           @statuses = opts[:statuses].all
+          @errors = @result.errors.to_h
           view :note_form
         else
-          symboled_params = r.params.map { |key, value| [key.to_sym, value]}.to_h
-          person = symboled_params
-          opts[:statuses]
-              .find_or_create(name: person[:status])
-              .add_note(name: person[:name], surname: person[:surname], patronymic_name: person[:patronymic_name],
-                        cell_phone_num: person[:cell_phone_num], home_phone_num: person[:home_phone_num], address: person[:address],
-                        birthday_date: person[:birthday_date], gender: person[:gender])
-
+          symboled_params = r.params.map { |key, value| [key.to_sym, value] }.to_h
+          opts[:statuses].add_new_note(symboled_params)
           r.redirect '/notes'
         end
       end

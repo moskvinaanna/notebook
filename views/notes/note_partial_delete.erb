@@ -1,8 +1,9 @@
 <tr>
   <h2>
-    <td> <%= @note[:name] %></td>
-    <td> <%= @note[:surname] %></td>
-    <td>Статус: <%= @note[:status_id] %></td>
-    <td> <input class="form-check-input" name=<%=@note[:id]%> type="checkbox"></td>
+    <td><h4> <%= @note[:name] %></h4></td>
+    <td><h4> <%= @note[:surname] %></h4></td>
+    <td><h4><%= @note.status[:name] %></h4></td>
+    <td><h4> <a href="/notes/<%= @note[:id] %>">Подробнее</a></h4></td>
+    <td><h4><input class="form-check-input" name=<%=@note[:id]%> type="checkbox"></h4> </td>
   </h2>
 </tr>

@@ -2,22 +2,52 @@
   <div class="post-note-background">
     <div class="center">
       <h4>
-  <p>
-    <label>Номер мобильного телефона:</label>
-    <input name="cell_phone_num" placeholder="Введите номер телефона" value=<%=@note[:cell_phone_num]%>>
-  </p>
-   <p>
-    <label>Номер домашнего телефона:</label>
-    <input name="home_phone_num" placeholder="Введите номер телефона" value=<%=@note[:home_phone_num]%>>
-  </p>
-   <p>
-    <label>Адрес:</label>
-    <input name="address" placeholder="Введите адрес" value=<%=@note[:address]%>>
-  </p>
-  <p>
-    <input class="btn btn-light" type="submit" value="Изменить">
-  </p>
+        <p>
+        <div class="form-group <%@errors.key?(:cell_phone_num) ? 'has-error' : ''%>">
+          <label>Номер мобильного телефона:</label>
+          <input name="cell_phone_num" placeholder="Введите номер телефона" value=<%=@note[:cell_phone_num]%>>
+          <%if  @errors.key?(:cell_phone_num)%>
+            <span style="color: red" class="help-block"><%=@errors[:cell_phone_num].first %></span>
+          <%end %>
+        </div>
+        </p>
+        <p>
+        <div class="form-group <%@errors.key?(:home_phone_num) ? 'has-error' : ''%>">
+          <label>Номер домашнего телефона:</label>
+          <input name="home_phone_num" placeholder="Введите номер телефона" value=<%=@note[:home_phone_num]%>>
+          <%if  @errors.key?(:home_phone_num)%>
+            <span style="color: red" class="help-block"><%=@errors[:home_phone_num].first %></span>
+          <%end %>
+        </div>
+        </p>
+        <p>
+        <div class="form-group <%@errors.key?(:address) ? 'has-error' : ''%>">
+          <label>Адрес:</label>
+          <input name="address" placeholder="Введите адрес" value=<%=@note[:address]%>>
+          <%if  @errors.key?(:address)%>
+            <span style="color: red" class="help-block"><%=@errors[:address].first %></span>
+          <%end %>
+        </div>
+        </p>
+        <p>
+        <div class="form-group <%@errors.key?(:status) ? 'has-error' : ''%>">
+          <label>Статус:</label>
+          <input id="status" name="status" list="select" placeholder="Выберете статус" value="<%=@note.status[:name] %>">
+          <datalist id="select">
+            <%@statuses.each do |status|%>
+              <option value=<%=status[:name] %>></option>
+            <%end %>
+          </datalist>
+          <%if  @errors.key?(:status)%>
+            <span style="color: red" class="help-block">Поле должно быть заполнено и длина не больше 100 символов</span>
+          <%end %>
+        </div>
+        </p>
+        <p>
+          <input class="btn btn-light" type="submit" value="Изменить">
+        </p>
       </h4>
     </div>
+    <a class="btn btn-outline-dark" href="/notes" style="position: absolute; left: 15px; bottom: 15px;">Вернуться к записям</a>
   </div>
 </form>

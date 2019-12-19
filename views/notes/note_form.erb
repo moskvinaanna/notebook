@@ -2,52 +2,100 @@
   <div class="post-note-background">
     <div class="center">
       <h4>
-  <p>
-    <label>Имя:</label>
-    <input name="name" placeholder="Введите имя">
-  </p>
-  <p>
-    <label>Фамилия:</label>
-    <input name="surname" placeholder="Введите фамилию">
-  </p>
-  <p>
-    <label>Отчество:</label>
-    <input name="patronymic_name" placeholder="Введите отчество">
-  </p>
-  <p>
-    <label>Номер мобильного телефона:</label>
-    <input name="cell_phone_num" placeholder="Введите номер телефона">
-  </p>
-   <p>
-    <label>Номер домашнего телефона:</label>
-    <input name="home_phone_num" placeholder="Введите номер телефона">
-  </p>
-   <p>
-    <label>Адрес:</label>
-    <input name="address" placeholder="Введите адрес">
-  </p>
-   <p>
-    <label>Дата рождения:</label>
-    <input name="birthday_date" type="date" id="start"
-       value="2018-07-22">
-  </p>
-  <p>
-    <label>Пол:</label>
-    <input name="gender" placeholder="Введите пол">
-  </p>
-  <p>
-    <label>Статус:</label>
-    <input list="select" name="status" placeholder="Введите статус">
-    <datalist id="select">
-      <%@statuses.each do |status|%>
-      <option value=<%=status[:name] %>></option>
-      <%end %>
-    </datalist>
-  </p>
-  <p>
-    <input class="btn btn-light" type="submit" value="Добавить">
-  </p>
+        <div class="form-group <%@errors.key?(:name) ? 'has-error' : ''%>">
+        <p>
+          <label>Имя:</label>
+          <input name="name" placeholder="Введите имя">
+          <%if  @errors.key?(:name)%>
+          <span style="color: red" class="help-block">Поле должно быть заполнено и длина не больше 100 символов</span>
+          <%end %>
+        </p>
+        </div>
+        <div class="form-group <%@errors.key?(:surname) ? 'has-error' : ''%>">
+        <p>
+          <label>Фамилия:</label>
+          <input name="surname" placeholder="Введите фамилию">
+          <%if  @errors.key?(:surname)%>
+          <span style="color: red" class="help-block"><%=@errors[:surname].first %></span>
+          <%end %>
+        </p>
+        </div>
+        <div class="form-group <%@errors.key?(:patronymic_name) ? 'has-error' : ''%>">
+        <p>
+          <label>Отчество:</label>
+          <input name="patronymic_name" placeholder="Введите отчество">
+          <%if  @errors.key?(:patronymic_name)%>
+          <span style="color: red" class="help-block"><%=@errors[:patronymic_name].first %></span>
+          <%end %>
+        </p>
+        </div>
+        <div class="form-group <%@errors.key?(:status) ? 'has-error' : ''%>">
+        <p>
+          <label>Статус:</label>
+          <input id="status" name="status" list="select" placeholder="Выберете статус">
+          <datalist id="select">
+            <%@statuses.each do |status|%>
+              <option value=<%=status[:name] %>></option>
+            <%end %>
+          </datalist>
+          <%if  @errors.key?(:status)%>
+          <span style="color: red" class="help-block">Поле должно быть заполнено и длина не больше 100 символов</span>
+          <%end %>
+        </p>
+        </div>
+        <div class="form-group <%@errors.key?(:cell_phone_num) ? 'has-error' : ''%>">
+        <p>
+          <label>Номер мобильного телефона:</label>
+          <input name="cell_phone_num" placeholder="Введите номер телефона">
+          <%if  @errors.key?(:cell_phone_num)%>
+          <span style="color: red" class="help-block"><%=@errors[:cell_phone_num].first %></span>
+          <%end %>
+        </p>
+        </div>
+        <div class="form-group <%@errors.key?(:home_phone_num) ? 'has-error' : ''%>">
+        <p>
+          <label>Номер домашнего телефона:</label>
+          <input name="home_phone_num" placeholder="Введите номер телефона">
+          <%if  @errors.key?(:home_phone_num)%>
+          <span style="color: red" class="help-block"><%=@errors[:home_phone_num].first %></span>
+          <%end %>
+        </p>
+        </div>
+        <p>
+        <div class="form-group <%@errors.key?(:address) ? 'has-error' : ''%>">
+          <label>Адрес:</label>
+          <input name="address" placeholder="Введите адрес">
+          <%if  @errors.key?(:address)%>
+            <span style="color: red" class="help-block"><%=@errors[:address].first %></span>
+          <%end %>
+        </div>
+        </p>
+        <p>
+        <div class="form-group <%@errors.key?(:birthday_date) ? 'has-error' : ''%>">
+          <label>Дата рождения:</label>
+          <input name="birthday_date" type="date" id="start">
+          <%if  @errors.key?(:birthday_date)%>
+            <span style="color: red" class="help-block">Пожалуйста, введите дату</span>
+          <%end %>
+        </div>
+        </p>
+        <p>
+        <div class="form-group <%@errors.key?(:gender) ? 'has-error' : ''%>">
+          <label>Пол:</label>
+          <select name="gender" class="custom-select custom-select-sm" id="select" style="width:auto">
+            <option>женский</option>
+            <option>мужской</option>
+          </select>
+          <%if  @errors.key?(:gender)%>
+            <span style="color: red" class="help-block">Поле должно быть заполнено</span>
+          <%end %>
+        </div>
+        </p>
+        <p>
+          <input class="btn btn-light" type="submit" value="Добавить">
+        </p>
       </h4>
     </div>
+    <a class="btn btn-outline-dark" href="/notes" style="position: absolute; left: 15px; bottom: 15px;">Вернуться к записям</a>
   </div>
 </form>
