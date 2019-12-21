@@ -12,6 +12,7 @@ class App
         @selection = r.params['select']
         @page_number = r.params['page_number']&.to_i || 0
         notes = opts[:notes].search_by(@search, @selection) || opts[:notes]
+        notes = notes.order(Sequel.desc(:id)) unless notes.nil?
         @count = notes.count
         @pages_count = (@count.to_f / 5).ceil - 1
         @notes = notes.limit(5, @page_number * 5).all
@@ -51,7 +52,7 @@ class App
             new_status_id = opts[:statuses]
                             .find_or_create(name: symboled_params[:status])[:id]
             opts[:notes].update_note(symboled_params, note_id, new_status_id)
-            opts[:statuses][status_id].destroy if opts[:statuses].is_empty?(status_id)
+            opts[:statuses][status_id].destroy if opts[:statuses].empty?(status_id)
             r.redirect '/notes'
           end
         end

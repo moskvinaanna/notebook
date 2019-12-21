@@ -17,7 +17,7 @@ class Status < Sequel::Model(:statuses)
                 gender: person[:gender])
   end
 
-  def self.is_empty?(status_id)
+  def self.empty?(status_id)
     self[status_id].notes.empty?
   end
 end

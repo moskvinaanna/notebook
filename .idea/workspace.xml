@@ -3,12 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="40bd97d0-7f7f-48a8-9a90-179f3dea67f6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/notes.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/notes.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/notes_contract.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/notes_contract.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/note.rb" beforeDir="false" afterPath="$PROJECT_DIR$/models/note.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/notes.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/0001_create_table.rb" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/0001_create_table.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/status.rb" beforeDir="false" afterPath="$PROJECT_DIR$/models/status.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/notes_route.rb" beforeDir="false" afterPath="$PROJECT_DIR$/routes/notes_route.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/notes/note_form.erb" beforeDir="false" afterPath="$PROJECT_DIR$/views/notes/note_form.erb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -83,7 +81,10 @@
       <workItem from="1576524296319" duration="8201000" />
       <workItem from="1576570343585" duration="26728000" />
       <workItem from="1576682300422" duration="28475000" />
-      <workItem from="1576735087688" duration="828000" />
+      <workItem from="1576735087688" duration="1147000" />
+      <workItem from="1576736279181" duration="230000" />
+      <workItem from="1576737778464" duration="1095000" />
+      <workItem from="1576961562959" duration="467000" />
     </task>
     <servers />
   </component>

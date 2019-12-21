@@ -12,7 +12,7 @@ Sequel.migration do
       String :address, null: true, size: 200
       Date :birthday_date, null: true
       String :gender, null: false
-      String :status, null: false, size: 100
+      foreign_key :status_id, :statuses, null: false
     end
   end
 end
